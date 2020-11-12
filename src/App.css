@@ -13,17 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -36,3 +25,161 @@
     transform: rotate(360deg);
   }
 }
+
+body{
+  background-color: black;
+}
+
+/* -----------------------------   navbar    -----------------------------------------*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  width: auto;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  float: none;
+}
+
+li {
+  float: left;
+  width: auto;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: blue;
+}
+
+/*  -----------------------------  USER SEARCH  ----------------------------------------------*/
+.user_search form > input {
+  WIDTH: 200px;
+  FONT-STYLE:italic;
+  PADDING: 2px 10px 5px 30px;
+  BORDER: none;
+  BORDER-RADIUS: 10px;
+  BOX-SHADOW: 2px 2px 5px #CCC;
+  -MOZ-BOX-SHADOW: 2px 2px 5px #CCC;
+  -WEBKIT-BOX-SHADOW: 2px 2px 5px #CCC;
+}
+
+.user_search form > input {
+  WIDTH: 200px;
+  FONT-STYLE:italic;
+  PADDING: 2px 10px 5px 30px;
+  BORDER: none;
+  BORDER-RADIUS: 10px;
+  BOX-SHADOW: 2px 2px 5px #CCC;
+  -MOZ-BOX-SHADOW: 2px 2px 5px #CCC;
+  -WEBKIT-BOX-SHADOW: 2px 2px 5px #CCC;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding-left: 40px;
+
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+/*  ------------------  FONT   ---------------------------------*/
+.h2{
+  color: white;
+  float: left;
+}
+/* ------  FIRST IMAGE  -------------*/
+.imgI{
+  height:60%;
+  width:100%;
+}
+
+/*  -----------------------  BUTTON SEARCH  -------------------------------------*/
+form.form input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+form.form button {
+  float: left;
+  width: 20%;
+  margin: 8px 0;
+  border-radius: 4px;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.form button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.form::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/*  ---------------- SCROLLING  ----------------------*/
+#carousel {
+  width: 100%;
+  height: 280px;
+  
+  overflow: auto;
+  white-space:nowrap;
+}
+
+#carousel .slide {
+  display: inline-block;
+}
+
+::-webkit-scrollbar {
+  opacity: 0;
+}
+
+
+/* --------- SCROLLING IMAGE ---------------------------------  */
+.imgS{
+  height:250px;
+  width:100%;
+}
+
