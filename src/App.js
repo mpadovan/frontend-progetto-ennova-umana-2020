@@ -1,154 +1,118 @@
 import './App.css';
-import  film from './img/film.jpg' ;
-import  f1 from './img/1.jpg' ;
-import  f2 from './img/2.jpg' ;
-import  f3 from './img/3.jpg' ;
-import  f4 from './img/4.jpg' ;
-import  f5 from './img/5.jpg' ;
-import  f6 from './img/6.jpg' ;
-import  f7 from './img/7.jpg' ;
+import React from 'react';
+import axios from 'axios';
+import Dialog from './Dialog';
 
-function App() {
-  return (
-    <div className="App">
-      <header>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-      <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>  
-      </header>
-      <body>
-      <ul>
-        <li><a className="active" href="#home">Home</a></li>
-        <li><a  href="#film"> Film </a></li>
-        <li><a  href="#serieTv">Serie-tv</a></li>
-        <li><a  href="#preferiti">Preferiti</a></li>
-      </ul>
-      <form className="form">
-        <input type="text" name="search" placeholder="Search..."/>
-        <button type="submit"><i className="fa fa-search"></i></button>
-      </form>
+const globalState = {
+    nickname: "ChiaraT92",
+    host: "http://localhost:3000/"
+};
 
-        <div>
-        <img src={film} alt="film"className="imgI"></img>
-        </div>
+export default class App extends React.PureComponent {
 
-          <div>
-            <h3 className="h2">Film in evidenza: </h3> <br></br>
-          </div>
+    constructor(props) {
+        super(props)
+        this.handleDialog = this.handleDialog.bind(this);
+    }
 
-          <div id="carousel">
-            <div className="slide">
-                <img src={f1} alt="1" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f2} alt="2" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f3} alt="3" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f4} alt="4" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f5} alt="5" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f6} alt="6" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f7} alt="7" className="imgS"></img>
-            </div>
-          </div>
+    state = {
+        media: {
+            popular: [],
+            topByGenre: [],
+            newReleases: [],
+            topPopular: {}
+        },
+        dialog: false,
+        clickedMedia: null
+    }
 
-          <div>
-            <h3 className="h2">Ultime uscite: </h3> <br></br>
-          </div>
+    componentDidMount() {
+        this.context = globalState;
+        const context = this.context;
+        this.setState({ nickname: context.nickname, host: context.host });
+        axios.get(`http://localhost:3000/` + this.state.nickname)
+            .then(res => {
+                const media = res.data;
+                this.setState(
+                    {
+                        media: {
+                            popular: media.popular.filter((val, index) => {
+                                if (index != 0) {
+                                    return val
+                                }
+                            }),
+                            topPopular: media.popular[0],
+                            topByGenre: media.topByGenre,
+                            newReleases: media.newReleases
+                        }
+                    })
+                console.log(this.state.media);
+            })
+    }
 
-          <div id="carousel">
-            <div className="slide">
-                <img src={f1} alt="1" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f2} alt="2" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f3} alt="3" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f4} alt="4" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f5} alt="5" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f6} alt="6" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f7} alt="7" className="imgS"></img>
-            </div>
-          </div>
+    handleDialog(clickedMedia) {
+        this.setState({ dialog: !this.state.dialog, clickedMedia: clickedMedia });
+    }
 
-          <div>
-            <h3 className="h2">Serie Tv popolari: </h3> <br></br>
-          </div>
+    render() {
+        return (
+            <div>
+                <ul>
+                    <li><a className="active" href="#home">Home</a></li>
+                    <li><a href="#film"> Film </a></li>
+                    <li><a href="#serieTv">Serie-tv</a></li>
+                    <li><a href="#preferiti">Preferiti</a></li>
+                </ul>
+                <form className="form">
+                    <input type="text" name="search" placeholder="Search..." />
+                    <button type="submit"><i className="fa fa-search"></i></button>
+                </form>
 
-          <div id="carousel">
-            <div className="slide">
-                <img src={f1} alt="1" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f2} alt="2" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f3} alt="3" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f4} alt="4" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f5} alt="5" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f6} alt="6" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f7} alt="7" className="imgS"></img>
-            </div>
-          </div>
+                {
+                    this.state.dialog === true && <Dialog media={this.state.clickedMedia}></Dialog>
+                }
 
-          <div>
-            <h3 className="h2">Film più popolari: </h3> <br></br>
-          </div>
-
-          <div id="carousel">
-            <div className="slide">
-                <img src={f1} alt="1" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f2} alt="2" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f3} alt="3" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f4} alt="4" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f5} alt="5" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f6} alt="6" className="imgS"></img>
-            </div>
-            <div className="slide">
-                <img src={f7} alt="7" className="imgS"></img>
-            </div>
-          </div>
+                <div>
+                    {/* { this.state.persons.map(person => <li>{person.name}</li>)} */}
+                    {<img src={this.state.host + this.state.media.topPopular.media_image} alt="film" className="imgI" onClick={() => this.handleDialog(this.state.media.topPopular)}></img>}
+                </div>
+                {
+                    this.state.media.topByGenre.length != 0 &&
+                    <div>
+                        <div>
+                            <h3 className="h2">Altri contenuti in base ai tuoi generi preferiti: </h3> <br></br>
+                        </div>
+                        <div id="carousel">
+                            {this.state.media.topByGenre.map(media => <div className="slide" key={media.title + media.publishing_date}>
+                                <img src={this.state.host + media.media_image} alt="2" className="imgS" onClick={() => this.handleDialog(media)}></img>
+                            </div>)}
+                        </div>
+                    </div>
+                }
 
 
-        </body>
-    </div>
-  );
+                <div>
+                    <h3 className="h2">Ultime uscite: </h3> <br></br>
+                </div>
+
+                <div id="carousel">
+                    {this.state.media.newReleases.map(media => <div className="slide">
+                        <img src={this.state.host + media.media_image} alt="2" className="imgS" onClick={() => this.handleDialog(media)}></img>
+                    </div>)}
+                </div>
+
+                <div>
+                    <h3 className="h2">Contenuti più popolari: </h3> <br></br>
+                </div>
+
+                <div id="carousel">
+                    {this.state.media.popular.map(media => <div className="slide">
+                        <img src={this.state.host + media.media_image} alt="2" className="imgS" onClick={() => this.handleDialog(media)}></img>
+                    </div>)}
+                </div>
+            </div>
+        )
+    }
 }
-
-export default App;
 
 

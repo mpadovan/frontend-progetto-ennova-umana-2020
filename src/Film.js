@@ -1,4 +1,4 @@
-import './App.css';
+/* import './App.css';
 import './App.js';
 
 class Film extends React.Component {
@@ -11,5 +11,5 @@ class Film extends React.Component {
   
 
 export default Film;
-
+ */
 
