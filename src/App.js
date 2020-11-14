@@ -20,10 +20,10 @@ export default class App extends React.PureComponent {
             popular: [],
             topByGenre: [],
             newReleases: [],
-            topPopular: {}
+            topPopular: {},
         },
         dialog: false,
-        clickedMedia: null
+        clickedMedia: null,
     }
 
     componentDidMount() {
@@ -50,7 +50,7 @@ export default class App extends React.PureComponent {
             })
     }
 
-    handleDialog(clickedMedia) {
+    handleDialog(clickedMedia = null) {
         this.setState({ dialog: !this.state.dialog, clickedMedia: clickedMedia });
     }
 
@@ -70,6 +70,9 @@ export default class App extends React.PureComponent {
 
                 {
                     this.state.dialog === true && <Dialog media={this.state.clickedMedia}></Dialog>
+                }
+                {
+                    this.state.dialog === true && <div className="close-dialog"><div style={{width:'fit-content', margin:'auto'}}><button className="close-dialog-button" onClick={this.handleDialog}>Close</button></div></div>
                 }
 
                 <div>
@@ -96,7 +99,7 @@ export default class App extends React.PureComponent {
                 </div>
 
                 <div id="carousel">
-                    {this.state.media.newReleases.map(media => <div className="slide">
+                    {this.state.media.newReleases.map(media => <div className="slide" key={media.title + media.publishing_date}>
                         <img src={this.state.host + media.media_image} alt="2" className="imgS" onClick={() => this.handleDialog(media)}></img>
                     </div>)}
                 </div>
@@ -106,7 +109,7 @@ export default class App extends React.PureComponent {
                 </div>
 
                 <div id="carousel">
-                    {this.state.media.popular.map(media => <div className="slide">
+                    {this.state.media.popular.map(media => <div className="slide" key={media.title + media.publishing_date}>
                         <img src={this.state.host + media.media_image} alt="2" className="imgS" onClick={() => this.handleDialog(media)}></img>
                     </div>)}
                 </div>

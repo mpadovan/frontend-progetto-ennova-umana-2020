@@ -1,16 +1,128 @@
-.dialog-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: transparent;
+.modal {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
 }
-.dialog {
+
+.modal__overlay {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(138, 138, 138, 0.9);
+}
+
+.modal__content {
+  z-index: 2;
+  background-color: black;
+  position: relative;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.modal__content p {
+  width: 90vw;
+  margin: auto;
+}
+.banner {
+    margin-top: 10vh !important;
+    height: 40vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 700;
+    margin-top: 1vh !important;
+}
+
+.desc {
+    font-weight: 600;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons button {
+    background-color: #4CAF50;
+    border: 0;
+    padding: 5px 10px !important;
+    margin: 1px 2vw !important;
+    border-radius: 5px;
+    font-size: large;
+}
+
+p {
+    text-transform: capitalize;
+}
+
+.rating {
+    text-align: center;
+    margin-top: 2vh !important;
+    margin-bottom: 1vh !important;
+}
+
+.description {
+    font-size: medium;
+    margin-top: 3vh !important;
+    margin-bottom: 3vh !important;
+}
+.addRating {
     display: flex;
-    height: 90vh;
-    width: 90vw;
-    margin: 5vh 5vw;
-    background-color: tomato;
-    opacity: 1;
+    flex-direction: row;
+    margin: auto;
+    width: 90%;
+    margin-top: 2vh !important;
+    margin-bottom: 1vh !important;
+}
+.rating-item-select {
+    width: 10%;
+    margin-left: 5%;
+    border: 0;
+    border-radius: 5px;
+    color: initial;
+}
+.rating-item-input {
+    width: 50%;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 0;
+    border-radius: 5px;
+    font-size: small;
+}
+.rating-item-button {
+    width: 20%;
+    margin-right: 5%;
+    background-color: #4CAF50;
+    border: 0;
+    border-radius: 5px;
+    font-size: small;
+}
+
+.comment-wrapper {
+    width: 85%;
+    margin: auto;
+    margin-top: 2vh !important;
+    border: white 1px solid;
+    padding: 10px 3vw;
+    border-radius: 15px;
+}
+
+.comment-wrapper:last-of-type {
+    margin-bottom: 2vh !important;
+}
+
+.reviews-wrapper {
+    margin-bottom: 10vh !important;
 }
