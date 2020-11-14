@@ -1,3 +1,4 @@
+import iconSearch from './img/ricerca.png';
 import React from 'react';
 import {
     BrowserRouter as Router,
@@ -25,10 +26,6 @@ function Home(){
         <header>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         </header>      
-        <form className="form">
-          <input type="text" name="search" placeholder="Search..."/>
-          <button type="submit"><i className="fa fa-search"></i></button>
-        </form>
   
           <div>
           <img src={fI} alt="film"className="imgI"></img>
@@ -129,12 +126,6 @@ function Film() {
       <header>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       </header>
-      
-        
-      <form className="form">
-        <input type="text" name="search" placeholder="Search..."/>
-        <button type="submit"><i className="fa fa-search"></i></button>
-      </form>
 
         <div>
         <img src={fI} alt="film"className="imgI"></img>
@@ -257,12 +248,6 @@ function SerieTv() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
         </header>
         
-          
-        <form className="form">
-          <input type="text" name="search" placeholder="Search..."/>
-          <button type="submit"><i className="fa fa-search"></i></button>
-        </form>
-  
           <div>
           <img src={fS} alt="film"className="imgI"></img>
           </div>
@@ -380,7 +365,385 @@ function SerieTv() {
 
 function Preferiti() {
     return(
-      <h1>Preferiti</h1>
+        <div className="App">
+        <header>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        </header>
+
+        <h3><center className="title">  Favourite: </center></h3>
+
+        <table width="100%" border="0" align="center" >
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+
+        </table>
+        </div>
+    );
+}
+
+function Search(){
+    return(
+        <div className="App">
+        <header>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+        </header>
+
+           
+        <form className="form">
+          <input type="text" name="search" placeholder="Search..."/>
+          <button type="submit"><i className="fa fa-search"></i></button>
+        </form>
+
+        
+        <h3><center className="title">  Search: </center></h3>
+
+        <table width="100%" border="0" align="center" >
+            <tr>
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>
+                
+
+                <td width="15%">
+                    <img src={f1} alt="1" className="imgS" />
+                </td>  
+            </tr>
+        </table>
+
+        </div>
+    );
+}
+
+function Login(){
+    return(
+        <div className="App">
+            <h3><center className="title">  LOGIN: </center></h3>
+
+            <h3><center className="title">  User: </center></h3>
+                <input type="text" className="input2" name="user" placeholder="username ..."/><br></br>
+                <button type="submit" className="buttonL"> Login </button>
+
+                <hr />
+            
+            <h3><center className="title">  REGISTRATION: </center></h3>
+
+            <h3><center className="title">  User: </center></h3>
+                <input type="text" className="input2" name="user" placeholder="username..."/>
+
+            <h3><center className="title">  Favourite genre: </center></h3>
+                <select>
+                <option>Action</option>
+                <option>Science Fiction</option>
+                <option>Fantasy</option>
+                <option>Comedy</option>
+                <option>Drama</option>
+                <option>Thriller</option>
+                </select><br></br>
+
+                <button type="submit" className="buttonL"> Registration </button>
+
+        </div>
     );
 }
 
@@ -389,10 +752,12 @@ export default function App(){
     <Router>
           <div>
             <ul>
-                <li><Link to="/">Home</Link></li>
+                <li><Link to ="/">Login</Link></li>
+                <li><Link to="/Home">Home</Link></li>
                 <li><Link to="/Film">Film</Link></li>
                 <li><Link to="/SerieTv">Serie-tv</Link></li>
-                <li><Link to="/Preferiti">Preferiti</Link></li>
+                <li><Link to="/Preferiti">Favourite</Link></li>
+                <li><Link to="/Search">Serach</Link></li>
             </ul>
 
             <hr />
@@ -400,6 +765,10 @@ export default function App(){
                 <Switch>
 
                 <Route exact path="/">
+                 <Login />
+                </Route>
+
+                <Route exact path="/Home">
                  <Home />
                 </Route>
 
@@ -413,6 +782,10 @@ export default function App(){
 
                 <Route path="/Preferiti">
                  <Preferiti />
+                </Route>
+
+                <Route path="/Search">
+                 <Search />
                 </Route>
 
                 </Switch>
