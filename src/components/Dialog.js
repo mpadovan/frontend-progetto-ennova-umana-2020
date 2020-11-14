@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import './Dialog.css'
-import { host, nickname } from "./Context";
+import '../css/App.css';
+import '../css/Dialog.css'
+import { host, nickname } from "../Context";
 
 export default class Dialog extends React.PureComponent {
 

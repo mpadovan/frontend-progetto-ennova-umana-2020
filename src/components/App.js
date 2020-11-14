@@ -1,12 +1,8 @@
-import './App.css';
+import '../css/App.css';
 import React from 'react';
 import axios from 'axios';
 import Dialog from './Dialog';
-
-const globalState = {
-    nickname: "ChiaraT92",
-    host: "http://localhost:3000/"
-};
+import { host, nickname } from '../Context';
 
 export default class App extends React.PureComponent {
 
@@ -16,6 +12,8 @@ export default class App extends React.PureComponent {
     }
 
     state = {
+        nickname: null,
+        host: null,
         media: {
             popular: [],
             topByGenre: [],
@@ -27,9 +25,7 @@ export default class App extends React.PureComponent {
     }
 
     componentDidMount() {
-        this.context = globalState;
-        const context = this.context;
-        this.setState({ nickname: context.nickname, host: context.host });
+        this.setState({ nickname: nickname, host: host });
         axios.get(`http://localhost:3000/` + this.state.nickname)
             .then(res => {
                 const media = res.data;
@@ -57,17 +53,6 @@ export default class App extends React.PureComponent {
     render() {
         return (
             <div>
-                <ul>
-                    <li><a className="active" href="#home">Home</a></li>
-                    <li><a href="#film"> Film </a></li>
-                    <li><a href="#serieTv">Serie-tv</a></li>
-                    <li><a href="#preferiti">Preferiti</a></li>
-                </ul>
-                <form className="form">
-                    <input type="text" name="search" placeholder="Search..." />
-                    <button type="submit"><i className="fa fa-search"></i></button>
-                </form>
-
                 {
                     this.state.dialog === true && <Dialog media={this.state.clickedMedia}></Dialog>
                 }
