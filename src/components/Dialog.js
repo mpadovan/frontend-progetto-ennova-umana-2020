@@ -27,7 +27,7 @@ export default class Dialog extends React.PureComponent {
         axios.post(`http://localhost:3000/favourite/${nickname}/${this.props.media.title}/${this.props.media.publishing_date}`)
             .then(res => {
                 if (res.data.error == undefined) {
-                    const isFav = res.data;
+                    //const isFav = res.data;
                     this.setState({ isFav: true })
                 }
             });
@@ -48,15 +48,23 @@ export default class Dialog extends React.PureComponent {
             .then(res => {
                 if (res.data.error == undefined) {
                     const reviews = this.manageReview(res.data);
-                    this.setState({ reviews: reviews.reviews, });
+                    this.setState({ reviews: reviews.reviews, }, () => {
+                        axios.get(`http://localhost:3000/rating/${nickname}/${this.props.media.title}/${this.props.media.publishing_date}`)
+                            .then(res => {
+                                const rating = res.data;
+                                this.setState({ avgRating: rating.avg })
+                            })
+                    });
                 }
             });
     }
 
+    // aggiorna il valore di state.rating quando si modifica la view
     handleRatingChange(event) {
         this.setState({ rating: event.target.value })
     }
 
+    // aggiorna il valore di state.comment quando si modifica la view
     handleCommentChange(event) {
         this.setState({ comment: event.target.value })
     }
@@ -86,6 +94,9 @@ export default class Dialog extends React.PureComponent {
             })
     }
 
+    //aggiunge un array che viene usato per stampare le stelle nel rating,
+    //nella view si fa una .map dell'array e si cicla in base al rating che il commento ha
+    //example: stars = [0,1,2] -> stars.map(star => <star></star>) -> ***
     manageReview(reviews = []) {
         reviews.reviews.forEach((element, i) => {
             reviews.reviews[i].stars = [];
