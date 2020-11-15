@@ -19,16 +19,14 @@ export default class Main extends React.PureComponent {
         return (
             <Router>
                 <div>
-                    <ul>
+                    <ul style={{marginBottom: 10, overflow: 'auto'}}>
                         {/* <li><Link to="/">Login</Link></li> */}
-                        <li><Link to="/Home">Home</Link></li>
-                        <li><Link to="/Film">Film</Link></li>
-                        <li><Link to="/SerieTv">Serie-tv</Link></li>
-                        <li><Link to="/Preferiti">Favourite</Link></li>
-                        <li><Link to="/Search">Search</Link></li>
+                        <li style={{float:'left'}}><Link to="/Home"><span class="fa fa-home"></span></Link></li>
+                        <li style={{float:'left'}}><Link to="/Film">Film <span class="fa fa-film"></span></Link></li>
+                        <li style={{float:'left'}}><Link to="/SerieTv">Series <span class="fa fa-tv"></span></Link></li>
+                        <li style={{float:'right'}}><Link to="/Search"><span class="fa fa-search"></span></Link></li>
+                        <li style={{float:'right'}}><Link to="/Preferiti"><span class="fa fa-heart"></span></Link></li>
                     </ul>
-
-                    <hr />
 
                     <Switch>
                         <Route exact path="/">
