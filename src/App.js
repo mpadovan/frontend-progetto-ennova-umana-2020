@@ -1,5 +1,5 @@
-import iconSearch from './img/ricerca.png';
 import React from 'react';
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -757,7 +757,7 @@ export default function App(){
                 <li><Link to="/Film">Film</Link></li>
                 <li><Link to="/SerieTv">Serie-tv</Link></li>
                 <li><Link to="/Preferiti">Favourite</Link></li>
-                <li><Link to="/Search">Serach</Link></li>
+                <li><Link to="/Search">Search</Link></li>
             </ul>
 
             <hr />
